@@ -15,9 +15,9 @@ app.get('/:date', function(req, res){
     
     //get date as string
     var d = req.params.date;
-    if(moment.unix(parseInt(d)).isValid()){
+    if(moment.unix(parseInt(d)*1000).isValid()){
         obj.unix = parseInt(d);
-        obj.natural = new moment(parseInt(d)).format("MMMM Do, YYYY");
+        obj.natural = new moment(parseInt(d)*1000).format("MMMM Do, YYYY");
     } else if (moment(d).isValid()){
         obj.unix = moment(d).unix();
         obj.natural = moment(d).format("MMMM Do, YYYY");
