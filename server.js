@@ -6,6 +6,10 @@ var moment = require('moment');
 //     res.send("Hello, world!");
 // });
 
+app.get('/', function(req, res){
+    res.send("Enter a unix timestamp or human date in the URL to see a conversion!");
+});
+
 app.get('/:date', function(req, res){
     //create response object
     var obj = {
